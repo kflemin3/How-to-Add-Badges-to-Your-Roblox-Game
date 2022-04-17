@@ -1,6 +1,5 @@
 This script is for the Utils script he uses in the video. DONT COPY THIS PART. ONLY COPY THE BELOW:::
 
-
 -- You can start copying here
 
 local utils = {}  -- change Utils to the name of your file
