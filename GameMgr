@@ -1,1 +1,13 @@
 This script is for the GameMgr script he uses in the video. DONT COPY THIS PART. ONLY COPY THE BELOW:::
+
+--Start copying here
+
+local badgeId = 0000000000 --Replace badge with your badge name, KEEP THE "Id" PART, Replace the 0's with your BADGE ID, can be found in the WEB URL of your badge
+local utils = require(game.ServerScriptService.Utils) --Replace both of the utils with whatever name you used for your Module Script file in ServerScriptService
+
+game.Players.PlayerAdded:Connect(function(player)
+  player.CharacterAppearanceLoaded:Connect(function(char)
+    wait(1) --This is how many seconds you want to wait for the player to recieve the badge after they join
+    utils:awardBadge(player, badgeId) --Again, replace badge with your badge name NOT id. and do not remove the letters Id or it will not work
+   end)
+end)
