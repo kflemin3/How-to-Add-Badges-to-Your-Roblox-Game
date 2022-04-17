@@ -1,0 +1,26 @@
+This script is for the Utils script he uses in the video. DONT COPY THIS PART. ONLY COPY THE BELOW:::
+
+
+-- You can start copying here
+
+local utils = {}  -- change Utils to the name of your file
+local bService = game:GetService("BadgeService")
+
+function utils:awardBadge(player, badgeId)
+	local hasBadge = false
+	local success, msg = pcall(function()
+		hasbadge = bService:UserHasBadgeAsync(player.UserId, badgeId)
+	end)
+	if not success then
+		warn("Something went wrong with the call to the badge service", msg) --You can change the words in the quotation marks to anything you want it is just the warn that the player did not get the badge and there is an error
+		return
+	end
+	if not hasBadge then
+		bService:AwardBadge(player.UserId, badgeId)
+	else
+		print("Player already has the badge!") --You can change the words in the quotation marks to whatever you want it is just the note that it says when the player already has the bandge and can not be awarded twice
+	end
+end
+
+
+return utils
